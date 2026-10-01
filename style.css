@@ -3,11 +3,13 @@ body{
 }
 
 .testo{
+    text-align: center;
     font-style: italic;
     color: white;
 }
 
 .imgcaveira{
+    text-align: center;
     width: 300px;
     height: 250px; 
 }
