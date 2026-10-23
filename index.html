@@ -1,31 +1,67 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MEU BLOG MEGA IRADUH!!</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- EMULADOR DO DOOM -->
+    <link rel="stylesheet"
+          href="https://v8.js-dos.com/latest/js-dos.css">
+
+    <script src="https://v8.js-dos.com/latest/js-dos.js"></script>
 </head>
 
 <body>
+
     <header>
         <ul>
-            <li><a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Dpt_BR">Meu FaceBuki uwu</a></li>
-            <li><a href="https://www.instagram.com/">Meu instah gram owo</a></li>
-            <li><a href="https://ge.globo.com/programas/esporte-espetacular/noticia/2022/03/27/receba-esporte-espetacular-mostra-as-origens-do-luva-de-pedreiro-fenomeno-da-internet.ghtml">Meu Blogi do Receba</a></li>
+            <li>
+                <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Dpt_BR">
+                    Meu FaceBuki uwu
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.instagram.com/">
+                    Meu instah gram owo
+                </a>
+            </li>
+
+            <li>
+                <a href="https://ge.globo.com/programas/esporte-espetacular/noticia/2022/03/27/receba-esporte-espetacular-mostra-as-origens-do-luva-de-pedreiro-fenomeno-da-internet.ghtml">
+                    Meu Blogi do Receba
+                </a>
+            </li>
         </ul>
     </header>
 
-    <h1 class="testo">ESSE EH U MEU BLOG IRADUHH! uwu</h1>
+    <h1 class="testo">
+        ESSE EH U MEU BLOG IRADUHH! uwu
+    </h1>
 
-    <img class="imgcaveira" src="caveirafogo.jpg" alt="Caveira iraduh pegando fogo">
+    <img class="imgcaveira"
+         src="caveirafogo.jpg"
+         alt="Caveira pegando fogo">
 
-    <h2 class="testo">Bem Vindu ao meu blogg!!!!</h2>
+    <h2 class="testo">
+        Bem Vindu ao meu blogg!!!!
+    </h2>
 
-    <p class="testo">U meu nomi eh Leonardu Mega Iraduh! sobreonome Avejaneda Boikivski</p>
+    <p class="testo">
+        U meu nomi eh Leonardu Mega Iraduh!
+        sobreonome Avejaneda Boikivski
+    </p>
 
-    <h2 class="testo">Essas saum az meliorez koizaz du mundu na minha opiniaum ¬¬:</h2>
+    <h2 class="testo">
+        Essas saum az meliorez koizaz du mundu
+        na minha opiniaum ¬¬:
+    </h2>
 
     <ul>
         <li class="testo">Lasanha :p</li>
@@ -37,43 +73,72 @@
         <li class="testo">Amburguers</li>
     </ul>
 
-    <!-- AREA DO DOOM MEGA IRADUH -->
+    <!-- DOOM MEGA IRADUH -->
 
     <div class="doom-container">
-        <h2>!!! JOGUE DOOM AKI !!! >:D</h2>
+
+        <h2>!!! JOGUE DOOM AKI !!! &gt;:D</h2>
+
         <p>O MELIOR JOGU DU MUNDU!!!</p>
 
         <div class="doom-janela" id="doom-janela">
-            <iframe
-                src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fdoom.jsdos"
-                title="DOOM 1993"
-                allow="fullscreen; autoplay"
-                allowfullscreen>
-            </iframe>
+            <div id="dos"></div>
         </div>
 
-        <button class="doom-botao" onclick="abrirDoom()">
+        <button class="doom-botao"
+                onclick="abrirDoom()">
             !!!TELAH SHEIA!!!
         </button>
 
-        <p>BOA SORTI MATANDU UZ DEMONIUZZ!!! XD</p>
+        <p>
+            BOA SORTI MATANDU UZ DEMONIUZZ!!! XD
+        </p>
+
     </div>
 
+    <!-- RODAPE -->
+
     <footer>
-        <p>meu númeru di telefoni praz gatinhazz ¬¬: (+55) 41 99676-8674</p>
-        <p>touduz us direitos rezervaduhz pra impreza ©Leonardo AB Industries Ltda</p>
+        <p>
+            meu númeru di telefoni praz gatinhazz ¬¬:
+            (+55) 41 99676-8674
+        </p>
+
+        <p>
+            touduz us direitos rezervaduhz
+            pra impreza ©Leonardo AB Industries Ltda
+        </p>
     </footer>
+
+    <!-- JAVASCRIPT DO DOOM -->
 
     <script>
         function abrirDoom() {
             const janela = document.getElementById("doom-janela");
 
-            if (janela.requestFullscreen) {
-                janela.requestFullscreen();
-            } else {
-                alert("SEU NAVEGADOR NAUM SUPORTA TELAH SHEIA!!! ;-;");
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else if (janela.requestFullscreen) {
+                janela.requestFullscreen().catch(function(erro) {
+                    console.error("Erro na tela cheia:", erro);
+                });
             }
         }
+
+        // INICIAR DOOM
+        try {
+            Dos(document.getElementById("dos"), {
+                url: "./doom.jsdos",
+                autoStart: true,
+                kiosk: true
+            });
+        } catch (erro) {
+            console.error("Erro ao iniciar DOOM:", erro);
+
+            document.getElementById("dos").textContent =
+                "ERRO AO INICIAR DOOM!!! ;-;";
+        }
     </script>
+
 </body>
 </html>
