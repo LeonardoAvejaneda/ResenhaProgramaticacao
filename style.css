@@ -20,6 +20,22 @@ body {
     height: 250px;
 }
 
+.imagens-blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 25px auto;
+}
+
+.imagens-blog img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+}
+
+
 /* AREA DO DOOM */
 
 .doom-container {
