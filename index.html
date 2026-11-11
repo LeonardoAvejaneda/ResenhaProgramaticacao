@@ -10,14 +10,17 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- EMULADOR DO DOOM -->
+    <!-- JS-DOS -->
     <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/js-dos@8.3.20/dist/js-dos.css">
+        href="https://cdn.jsdelivr.net/npm/js-dos@8.3.20/dist/js-dos.css">
 
     <script src="https://cdn.jsdelivr.net/npm/js-dos@8.3.20/dist/js-dos.js"></script>
+
 </head>
 
 <body>
+
+    <!-- CABECALHO -->
 
     <header>
         <ul>
@@ -41,25 +44,31 @@
         </ul>
     </header>
 
+    <!-- TITULO -->
+
     <h1 class="testo">
         ESSE EH U MEU BLOG IRADUHH! uwu
     </h1>
 
-    <!-- AS 3 IMAGENS MEGA IRADUHH -->
+    <!-- IMAGENS -->
 
     <div class="imagens-blog">
+
         <img class="imgcaveira"
-             src="caveirafogo.jpg"
-             alt="Caveira pegando fogo">
+            src="caveirafogo.jpg"
+            alt="Caveira pegando fogo">
 
         <img class="creekgif"
-             src="creek.gif"
-             alt="Super Creek Chibi">
+            src="creek.gif"
+            alt="Super Creek Chibi">
 
         <img class="mineskull"
-             src="mineskull.png"
-             alt="Quadro Mine Caveira">
+            src="mineskull.png"
+            alt="Quadro Mine Caveira">
+
     </div>
+
+    <!-- APRESENTACAO -->
 
     <h2 class="testo">
         Bem Vindu ao meu blogg!!!!
@@ -77,27 +86,34 @@
 
     <ul>
         <li class="testo">Lasanha :p</li>
+        <li class="testo">Va</li>
+        <li class="testo">Gihh naz</li>
         <li class="testo">Yakult</li>
         <li class="testo">Hollow Knight</li>
-        <li class="testo">53105</li>
+        <li class="testo">53105 Grandizz i bunituzz</li>
         <li class="testo">Amburguers</li>
     </ul>
 
-    <!-- DOOM MEGA IRADUH -->
+    <!-- JANELA DO DOOM -->
 
     <div class="doom-container">
 
-        <h2>!!! JOGUE DOOM AKI (to tentando arrumar)!!! &gt;:D</h2>
+        <h2>!!! JOGUE DOOM AKI !!! &gt;:D</h2>
 
-        <p>O MELIOR JOGU DU MUNDU!!!</p>
+        <p>O MELHOR JOGU DU MUNDU!!!</p>
 
         <div class="doom-janela" id="doom-janela">
+
             <div id="dos"></div>
+
         </div>
 
-        <button class="doom-botao"
-                onclick="abrirDoom()">
+        <button
+            class="doom-botao"
+            onclick="abrirDoom()">
+
             !!!TELAH SHEIA!!!
+
         </button>
 
         <p>
@@ -109,46 +125,83 @@
     <!-- RODAPE -->
 
     <footer>
+
         <p>
             meu númeru di telefoni praz gatinhazz ¬¬:
-            (+55) 41 99676-8674
+            [coloque seu número aqui]
         </p>
 
         <p>
             touduz us direitos rezervaduhz
             pra impreza ©Leonardo AB Industries Ltda
         </p>
+
     </footer>
 
     <!-- JAVASCRIPT DO DOOM -->
 
     <script>
+
+        // TELA CHEIA
+
         function abrirDoom() {
+
             const janela = document.getElementById("doom-janela");
 
             if (document.fullscreenElement) {
+
                 document.exitFullscreen();
-            } else if (janela.requestFullscreen) {
+
+            } else {
+
                 janela.requestFullscreen().catch(function(erro) {
+
                     console.error("Erro na tela cheia:", erro);
+
                 });
+
             }
+
         }
 
-        // INICIAR DOOM
-        try {
-            Dos(document.getElementById("dos"), {
-                url: "./doom.jsdos",
-                autoStart: true,
-                kiosk: true
-                pathPrefix: "https://cdn.jsdelivr.net/npm/emulators@8.3.7/dist/"
-            });
-        } catch (erro) {
-            console.error("Erro ao iniciar DOOM:", erro);
 
-            document.getElementById("dos").textContent =
-                "ERRO AO INICIAR DOOM!!! ;-;";
-        }
+        // INICIALIZACAO DO DOOM
+
+        window.addEventListener("load", function() {
+
+            try {
+
+                if (typeof Dos !== "function") {
+
+                    throw new Error("O js-dos não foi carregado!");
+
+                }
+
+                Dos(document.getElementById("dos"), {
+
+                    url: "./doom.jsdos",
+
+                    autoStart: true,
+
+                    kiosk: true,
+
+                    pathPrefix: "https://cdn.jsdelivr.net/npm/emulators@8.3.7/dist/"
+
+                });
+
+                console.log("DOOM iniciado!");
+
+            } catch (erro) {
+
+                console.error("Erro ao iniciar DOOM:", erro);
+
+                document.getElementById("dos").textContent =
+                    "ERRO AO INICIAR DOOM!!! ;-;";
+
+            }
+
+        });
+
     </script>
 
 </body>
